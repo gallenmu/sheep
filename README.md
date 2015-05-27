@@ -8,7 +8,8 @@ The cache testing tool is based on ideas by [Ulrich Drepper](http://lwn.net/Arti
 The tools were used for performance evaluation of packet processing frameworks published in our [paper](http://www.net.in.tum.de/fileadmin/bibtex/publications/papers/gallenmueller_ancs2015.pdf) [2]. 
 
 # References
-[1] Gabriele Paoloni. How to Benchmark Code Execution Times on Intel IA-32 and IA-64 Instruction Set Architectures, 2010.
+[1] Gabriele Paoloni. How to Benchmark Code Execution Times on Intel IA-32 and IA-64 Instruction Set Architectures, September 2010.
+
 [2] Sebastian Gallenmüller, Paul Emmerich, Florian Wohlfart, Daniel Raumer, and Georg Carle. Comparison of Frameworks for High-Performance Packet IO. In ACM/IEEE Symposium on Architectures for Networking and Communications Systems (ANCS 2015), May 2015.
 
 
