@@ -7,6 +7,12 @@ The cache testing tool is based on ideas by [Ulrich Drepper](http://lwn.net/Arti
 
 The tools were used for performance evaluation of packet processing frameworks published in our [paper](http://www.net.in.tum.de/fileadmin/bibtex/publications/papers/gallenmueller_ancs2015.pdf) [2]. 
 
+# Usage
+
+To build CPULoader/CacheLoader simply change to the according directory and execute make. 
+
+The *_test.c files demonstrate the usage the tools.
+
 # References
 [1] Gabriele Paoloni. How to Benchmark Code Execution Times on Intel IA-32 and IA-64 Instruction Set Architectures, September 2010.
 
