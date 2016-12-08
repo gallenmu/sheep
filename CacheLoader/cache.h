@@ -82,7 +82,7 @@ static element* prepare_list(uint32_t power, uint8_t use_hugepages) {
 
 	uint64_t size = pow(2, power);
 	uint64_t memsize = sizeof(element) * size;
-	printf ("Allocating list with %lu elements of size %lu B using a total memory of %lu KB.\n", size, sizeof(element), memsize);
+	printf ("Allocating list with %lu elements of size %lu B using a total memory of %lu B.\n", size, sizeof(element), memsize);
 	
 	element* list = mmap(NULL, memsize, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0);
 	if (use_hugepages) {
