@@ -1,4 +1,6 @@
+#ifndef _GNU_SOURCE
 #define _GNU_SOURCE
+#endif /* _GNU_SOURCE */
 
 #ifdef __GNUC__
 #define likely(x)       __builtin_expect(!!(x), 1)
@@ -13,7 +15,7 @@
 #include <stdio.h>
 
 static uint64_t eal_tsc_resolution_hz = 0;
-static 	union {
+static union {
 	uint64_t tsc_64;
 	struct {
 		uint32_t lo_32;
@@ -24,11 +26,11 @@ static uint64_t start;
 static uint64_t end;
 
 /* forward declaration */
-inline uint64_t start_measurement(void);
-inline uint64_t read_rdtsc(void);
-inline uint64_t read_rdtscp(void);
-inline uint64_t stop_measurement(void);
-inline void wait_cycles(uint32_t cycles);
+static inline uint64_t start_measurement(void);
+static inline uint64_t read_rdtsc(void);
+static inline uint64_t read_rdtscp(void);
+static inline uint64_t stop_measurement(void);
+static inline void wait_cycles(uint32_t cycles);
 uint64_t rdtsc_hz(void);
 
 /**
@@ -37,7 +39,7 @@ uint64_t rdtsc_hz(void);
  *
  * @return Content of TSC register.
  */
-inline uint64_t
+static inline uint64_t
 start_measurement(void) {
 
 	asm volatile ("CPUID\n\t" 
@@ -56,7 +58,7 @@ start_measurement(void) {
  *
  * @return Value of TSC register
  */
-inline uint64_t
+static inline uint64_t
 read_rdtsc(void) {
 
 	asm volatile("RDTSC\n\t" 
@@ -75,7 +77,7 @@ read_rdtsc(void) {
  *
  * @return Value of TSC register
  */
-inline uint64_t
+static inline uint64_t
 read_rdtscp(void) {
 
 	asm volatile("RDTSCP\n\t"
@@ -94,7 +96,7 @@ read_rdtscp(void) {
  *
  * @return Value of TSC register
  */
-inline uint64_t
+static inline uint64_t
 stop_measurement(void) {
 
 	asm volatile("RDTSCP\n\t" 
@@ -114,7 +116,7 @@ stop_measurement(void) {
  * 
  * @return Value of TSC at the end of the wait.
  */
-inline void 
+static inline void
 wait_cycles(uint32_t cycles) {
 
 	asm volatile("mov %0, %%ecx\n\t"
